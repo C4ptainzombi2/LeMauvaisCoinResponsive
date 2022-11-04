@@ -10,20 +10,66 @@
   <!-- Bootstrap CSS v5.2.1 -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+  <link rel="stylesheet" href="./public/assets/css/styleresponsive.css">
 
 </head>
 
 <body>
+    <!-- Insertions du headers -->
   <header>
-         
+    <!-- Ajout du container-fluid -->
+         <div class="container">
+            <div class="row">
+                <img src="./public/assets/img/logo.png" class="img-header offset-3 offset-sm-0 col-12 d-sm-none" alt="Logo de ">
+                <div class="col-12">
+                    
+                    <!-- Début de la navbar -->
+                    <div class="collapse" id="navbarToggleExternalContent">
+                        <div class="bg-header">
+                            <a class="offset-5 text-decoration-none  d-sm-none text-light text-center" href="#">Acceuil</a><br>
+                            <a class="offset-5 text-decoration-none  d-sm-none text-light text-center" href="#">Reservation</a><br>
+                            <a class="offset-5 text-decoration-none  d-sm-none text-light text-center" href="#">Contact</a><br>
+                        </div>
+                      </div>
+                      <!-- Fin et début de la nav-bar -->
+                      <nav class="navbar navbar-dark bg-header">
+                        <div class="container-fluid hover">
+                        <img src="./public/assets/img/logo.png" class="img d-none d-sm-block" alt="Logo de ">
+                          <a class=" text-decoration-none text-light d-none d-sm-inline" href="#">Acceuil</a>
+                          <a class="text-decoration-none text-light d-none d-sm-inline" href="#">Reservation</a>
+                          <a class=" text-decoration-none text-light d-none d-sm-inline" href="#">Contact</a>
+                          <button class="navbar-toggler d-sm-none mx-10 offset-10" type="button" data-bs-toggle="collapse" data-bs-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                          </button>
+                        </div>
+                      </nav>
+                </div>
+            </div>
+         </div>
     <!-- place navbar here -->
-
   </header>
   <main>
 
   </main>
   <footer>
-    <!-- place footer here -->
+    <div class="container bg-footer">
+        <div class="row">
+            <div class="col-12">
+                  <!-- début de la nav-bar -->
+                  <nav class="navbar navbar-dark bg-footer">
+                    <div class="container ">
+                        <a class=" text-center col-12 col-sm-1 mx-md-0 mb-2 text-decoration-none text-light" href="#">Contactez-nous</a>
+                        <a class=" text-center col-12 col-sm-1 mx-md-0 mb-2 text-decoration-none text-light " href="#">Politique de confidentialité</a>
+                        <a class=" text-center col-12 col-sm-1 mx-md-0 mb-2 text-decoration-none text-light " href="#">Mentions légales</a>
+                        <a class=" text-center col-12 col-sm-1 mx-md-0 mb-2 mb-sm-0 text-decoration-none text-light " href="#">CGU</a>
+                        <img src="./public/assets/img/icon_facebook.png" class="img-footer d-sm-none " alt="">
+                        <img src="./public/assets/img/icon_instagram.png" class="img-footer d-sm-none" alt="">
+                        <img src="./public/assets/img/icon_twitter.png" class="img-footer d-sm-none" alt="">
+                    </div>
+                  </nav>
+            </div>
+        </div>
+     </div>
   </footer>
   <!-- Bootstrap JavaScript Libraries -->
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
