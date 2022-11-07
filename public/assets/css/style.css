@@ -1,449 +1,95 @@
-* {
-    margin: 0;
-    padding: 0;
-    /* box-sizing:border-box 
-    permet aux enfants d'une div de ne pas dépasser son parent en width et heigh */
-    box-sizing: border-box;
+
+
+
+section {
+    padding: 7%;
 }
 
-html,
-body {
-    max-width: 100%;
-    font-family: Raleway, Arial, Helvetica, sans-serif;
+.grey {
+    background-color: #f8f8f8;
 }
 
-/* Attribut d'une typographie Raleway aux h1 et h2 */
-h1,
-h2 {
+h1, h2 {
     font-family: Raleway, Arial, Helvetica, sans-serif;
     font-weight: bold;
 }
 
-h1, h2, p{
+#firstH2 {
+    font-size: x-large;
+}
+
+h1, h2, p, label {
     color: #003A7E;
 }
 
-/* HEADER */
-.header {
-    width: 100%;
-    display: flex;
-    flex-wrap: wrap;
-    height: 100px;
-    background-color: #003a7e;
-}
-
-.header-logo img {
-    position: absolute;
-    float: left;
-    width: 130px;
-    height: 130px;
-    margin: -15px 80px;
-}
-
-.nav-header {
-    margin: auto auto;
-    text-align: center;
-}
-
-.nav-header a {
-    color: #FFF;
-    text-decoration: none;
-    font: 20px raleway bold;
-    margin: 0px 10px;
-    padding: 10px 70px;
-    position: relative;
-    z-index: 0;
-    cursor: pointer;
-}
-
-/* ::before et ::after permet de rajouter du css sans passer par le html
-        Ici une ligne blanche pendant le hover */
-.nav-header a:before,
-.nav-header a:after {
-    position: absolute;
-    left: 0px;
-    width: 100%;
-    height: 2px;
-    background: #FFF;
-    content: "";
-    opacity: 0;
-    transition: all 0.3s;
-}
-
-.nav-header a:before {
-    top: 0px;
-    transform: translateY(10px);
-}
-
-.nav-header a:after {
-    bottom: 0px;
-    transform: translateY(-10px);
-}
-
-.nav-header a:hover:before,
-.nav-header a:hover:after {
-    opacity: 1;
-    transform: translateY(0px);
-}
-
-
-/* NAVIGATION FIXER A GAUCHE DES RESEAUX SOCIAUX */
-.nav-float {
-    height: 130px;
-    position: fixed;
-    /* 50% je me fixe à la moitié de l'écran
-    -65px Moins la moitié de ma nav donc son milieu */
-    margin: -65px 20px 0 20px;
-    top: 50%;
-}
-
-.nav-float img {
-    display: block;
-    width: 40px;
-    height: 40px;
-}
-
-
-/* TOP SECTION H1 ET CARROUSEL */
-.top-section {
-    height: 100%;
-    width: 100%;
-}
-
-.top-section-h1 {
-    font-size: 40px;
-    margin-top: 40px;
-    margin-bottom: 10px;
-    text-align: center;
-    color: #003A7E;
-}
-
-.top-section-h2 {
-    text-align: center;
-    font-size: 24px;
-}
-
-/* source du carrousel: https://codepen.io/onion2k/pen/xxZYBVj */
-.carousel {
-    height: 440px;
-    margin-top: 0;
-    display: grid;
-    grid-template-rows: 400px 10px;
-    grid-template-columns: 1fr 30px 30px 30px 1fr;
-    align-items: center;
-    justify-items: center;
-}
-
-.carousel-img {
-    grid-row: 1 / 2;
-    grid-column: 1 / 8;
-    width: 100%;
-    height: 400px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    transform-style: preserve-3d;
-    perspective: 600px;
-    /* propriétés persos pour être réutilisé grâce à var */
-    --items: 3;
-    --middle: 3;
-    --position: 1;
-    /* pointer sur none pour que les images ne semblent pas cliquable */
-    pointer-events: none;
-}
-
-div.item {
-    position: absolute;
-    width: 450px;
-    height: 300px;
-    /* Ajout de propriétés persos */
-    --r: calc(var(--position) - var(--offset));
-    --abs: max(calc(var(--r) * -1), var(--r));
-    transition: all 0.25s linear;
-    /* definition du tranform des images sur les côtés de celle principale */
-    transform: rotateY(calc(-10deg * var(--r))) translateX(calc(-450px * var(--r)));
-    z-index: calc((var(--position) - var(--abs)));
-}
-
-/* On definit les images des items 1 2 et 3 */
-div.item:nth-of-type(1) {
-    --offset: 1;
-    background-image: url(../img/ordinateur_carrousel.jpg);
-    background-size: contain;
-}
-
-div.item:nth-of-type(2) {
-    --offset: 2;
-    background-image: url(../img/playstation_carrousel.jpg);
-    background-size: contain;
-}
-
-div.item:nth-of-type(3) {
-    --offset: 3;
-    background-image: url(../img/telephone_carrousel.jpg);
-    background-size: contain;
-}
-
-/* selection des inputs 1 2 et 3 pour les placer dans la grille*/
-input:nth-of-type(1) {
-    grid-column: 2 / 3;
-    grid-row: 2 / 3;
-}
-
-input:nth-of-type(1):checked~.carousel-img {
-    --position: 1;
-}
-
-input:nth-of-type(2) {
-    grid-column: 3 / 4;
-    grid-row: 2 / 3;
-}
-
-/* Change la variable --position a 2 pour faire référence à la 2eme image */
-input:nth-of-type(2):checked~.carousel-img {
-    --position: 2;
-}
-
-input:nth-of-type(3) {
-    grid-column: 4 /5;
-    grid-row: 2/ 3;
-}
-
-input:nth-of-type(3):checked~.carousel-img {
-    --position: 3;
-}
-
-/* SECTION FORMULAIRE */
-/* Couleur de fond de la section du formulaire */
-.form-evenement {
-    background-color: #F8F8F8;
-    margin-top: 30px;
-    padding: 50px 0;
-}
-
-
-
-.form-evenement-h2 {
-    font-size: 32px;
-    margin: 50px 0 25px 225px;
-}
-
-.form-descriptif {
-    font-size: 16px;
-    margin: 0 200px 34px 225px;
+p {
     font-family: Cambria;
-    color: #003A7E;
-}
-
-.form-main {
-    display: flex;
-    flex-wrap: wrap;
-    margin-left: 250px;
-}
-
-.formLeft,
-.formRight {
-    width: 50%;
 }
 
 label {
-    font-size: 16px;
     font-family: Raleway, Arial, Helvetica, sans-serif;
-    color: #003A7E;
+}
+
+.star {
+    color:red;
 }
 
 input {
-    margin-left: 28px;
-    margin-bottom: 21px;
+    margin-bottom: 5%;
+}
+
+input[type=text]:focus, input[type=email]:focus, input[type=date]:focus {
+    border-color: #003A7E;
+    box-shadow: 0 0 5px #003A7E;
 }
 
 input::placeholder {
     font-style: italic;
 }
 
-.required {
-    color: red;
-}
-
-.lastname {
-    margin-left: 98px;
-}
-
-.adress {
-    margin-left: 74px;
-}
-
-#adress {
-    width: 300px;
-}
-
-.zipCode {
-    margin-left: 46px;
-}
-
-.email {
-    margin-left: 93px;
-}
-
-.firstname {
-    margin: 48px 0 0 21px;
-}
-
-.town {
-    margin-left: 46px;
-}
-
-#town {
-    margin-top: 83px;
-    margin-left: 28px;
-}
-
-#telNumber {
-    width: 95px;
-}
-
-
-/* SECTION MAP GOOGLE */
-.map h2 {
-    font-size: 32px;
-    margin-top: 85px;
-    margin-left: 230px;
-}
-
-.map p {
-    font-size: 24px;
-    margin-top: 55px;
-    text-align: center;
-}
-
-/* iframe permet d'incorporer la map google au siteweb */
-.iframe-map {
-    margin: 65px 10px;
-    display: flex;
-    justify-content: center;
-}
-
-
-/* SECTION INFO COVID ET PLUS */
-.home-infos {
-    color: #003A7E;
-    display: flex;
-    flex-wrap: wrap;
-    background-color: #F8F8F8;
-    padding: 0 230px;
-}
-
-.img-covid {
-    width: 50%;
-    height: 250px;
-    margin-top: 65px;
-}
-
-.img-covid img {
-    width: 500px;
-    margin-left: 62px;
-}
-
-.text-infos {
-    width: 50%;
-    margin-top: 65px;
-    margin-bottom: 135px;
-}
-
-.text-infos h2 {
-    font-size: 32px;
-    margin-bottom: 65px;
-}
-
-.home-infos p {
-    font-size: 16px;
-}
-
-.more-infos {
-    display: flex;
-    flex-direction: column;
-    margin: 230px;
-    margin-top: 65px;
-    margin-bottom: 60px;
-}
-
-.text-more-infos h2 {
-    font-size: 32px;
-    margin-bottom: 65px;
-}
-
-.text-more-infos p {
-    font-size: 16px;
-    margin-bottom: 40px;
-}
-
-
-/* logo des partenaires */
-.logoPartner {
-    /* display: flex; */
-    /* justify-content: flex-end; */
-    position: absolute;
-    padding: 0 20px;
-    margin-left: 750px;
-    margin-top: 145px;
-    display: inline-flex;
-}
-
-.logoPartner a {
-    padding: 0 20px;
-}
-
-
-/* Button reserver et contact */
-.submit{
-    margin-left: 260px;
-}
-
-.button {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 20px;
-}
-
-
-button {
+#button {
     background-color: #003a7e;
     border: none;
-    padding: 6px;
-    width: 420px;
-    text-align: center;
-    font-size: 28px;
     font-family: Arial;
     font-weight: Bold;
-    border-radius: 25px;
+    width: 100%;
+    border-radius: 2rem;
+    /* font-size: 2rem; */
+    height: 200%;
 }
 
-button a,#submit {
-    color: white;
-    text-decoration: none;
+iframe {
+    width: 100%;
 }
 
-
-/* SECTION FOOTER */
-footer {
-    max-width: 100%;
-    height: 100px;
+#button2 {
     background-color: #003a7e;
-    text-align: center;
+    border: none;
+    font-family: Arial;
+    font-weight: Bold;
+    width: 100%;
+    border-radius: 2rem;
+    height: 7vh;
 }
 
-.nav-footer {
-    padding: 40px 0;
+
+a>img {
+    margin-right: 10%; 
 }
 
-.nav-footer a {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-    font-size: 16px;
-    margin: 0 75px;
-}
 
-.nav-footer a:hover {
-    color: #000000;
-}
+    /* NAVIGATION FIXER A GAUCHE DES RESEAUX SOCIAUX */
+    .nav-float {
+        height: 130px;
+        position: fixed;
+        /* 50% je me fixe à la moitié de l'écran
+        -65px Moins la moitié de ma nav donc son milieu */
+        margin: -65px 20px 0 20px;
+        top: 50%;
+    }
+    
+    .nav-float img {
+        display: block;
+        width: 40px;
+        height: 40px;
+    }

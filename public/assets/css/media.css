@@ -1,0 +1,95 @@
+@media screen and (max-width: 576px) {
+    iframe {
+        height: 60vh;
+    }
+
+    .nav-float {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 576px) and (max-width: 768px) {
+
+    iframe {
+        height: 70vh;
+    }
+
+    #button {
+        width: 50%;
+        border-radius: 3rem;
+        /* font-size: 2rem; */
+        /* height: 200%; */
+    }
+
+    #button2 {
+        width: 100%;
+        border-radius: 2rem;
+        height: 12vh;
+    }
+
+    .nav-float {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 992px) {
+    iframe {
+        height: 70vh;
+    }
+
+    #button {
+        width: 40%;
+        border-radius: 3rem;
+        /* font-size: 2rem; */
+        /* height: 200%; */
+}
+
+#button2 {
+    width: 100%;
+    border-radius: 2rem;
+    height: 15vh;
+    }
+
+.nav-float {
+        display:none;
+    }
+}
+
+@media screen and (min-width: 992px) and (max-width: 1400px) {
+    iframe {
+        height: 40vh;
+    }
+
+    #button {
+        width: 40%;
+        border-radius: 3rem;
+        /* font-size: 2rem; */
+        /* height: 200%; */
+    }
+
+#button2 {
+    width: 100%;
+    border-radius: 2rem;
+    height: 4vh;
+    }
+}
+
+@media screen and (min-width: 1400px) {
+
+    iframe {
+        height: 40vh;
+    }
+
+    #button {
+        width: 25%;
+        border-radius: 3rem;
+        /* font-size: 2rem; */
+        /* height: 6vh; */
+    }
+
+#button2 {
+    width: 100%;
+    border-radius: 2rem;
+    height: 6vh;
+    }
+}
