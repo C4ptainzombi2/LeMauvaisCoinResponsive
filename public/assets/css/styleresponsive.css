@@ -1,0 +1,43 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+
+h1 , h2 , p{
+    color: #003A7E;
+}
+.nav-link{
+    color: aliceblue;
+}
+.collapse{
+    height: 20vh;
+}
+.bg-header, header{
+    background-color: #003a7e;
+    line-height: 2.95rem;
+    height: 15vh;
+}
+.bg-footer{
+    background-color: #003a7e;
+}
+.img{
+    height: 10rem;
+    width: 10rem;
+}
+.img-header{
+    height: 26vh;
+    width: 50vw;
+}
+.img-footer{
+    height: 7vh;
+    width: 10vw;
+}
+footer{
+    width: 100vw;
+    background-color: #003a7e;
+}
+footer a {
+    font-size: x-large;
+}
+
+/* /* HEADER */
