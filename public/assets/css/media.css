@@ -1,4 +1,8 @@
 @media screen and (max-width: 576px) {
+    .headerDesktop {
+        display: none;
+    }
+    
     iframe {
         height: 60vh;
     }
@@ -9,6 +13,10 @@
 }
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
+
+    .headerDesktop {
+        display: none;
+    }
 
     iframe {
         height: 70vh;
@@ -33,6 +41,10 @@
 }
 
 @media screen and (min-width: 768px) and (max-width: 992px) {
+    .headerDesktop {
+        display: none;
+    }
+    
     iframe {
         height: 70vh;
     }
