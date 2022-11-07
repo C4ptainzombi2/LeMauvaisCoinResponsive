@@ -65,7 +65,12 @@
 }
 
 /* Fin du header Desktop  */
+.navMobile {
+background-color: #003a7e ;}
 
+.logoFirst {
+width: 30%;
+}
 
 section {
     padding: 7%;

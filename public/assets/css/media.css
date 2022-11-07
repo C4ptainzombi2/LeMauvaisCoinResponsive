@@ -68,6 +68,10 @@
 }
 
 @media screen and (min-width: 992px) and (max-width: 1400px) {
+    .navMobile {
+        display: none;
+    }
+
     iframe {
         height: 40vh;
     }
@@ -87,6 +91,9 @@
 }
 
 @media screen and (min-width: 1400px) {
+    .navMobile {
+        display: none;
+    }
 
     iframe {
         height: 40vh;
