@@ -65,12 +65,19 @@
 }
 
 /* Fin du header Desktop  */
+
+
+/* Début du header Mobile  */
+
 .navMobile {
 background-color: #003a7e ;}
 
 .logoFirst {
 width: 30%;
 }
+
+/* Fin du header Mobile  */
+
 
 section {
     padding: 7%;
@@ -125,8 +132,7 @@ input::placeholder {
     font-weight: Bold;
     width: 100%;
     border-radius: 2rem;
-    /* font-size: 2rem; */
-    height: 200%;
+    height: 9vh;
 }
 
 iframe {
@@ -140,7 +146,7 @@ iframe {
     font-weight: Bold;
     width: 100%;
     border-radius: 2rem;
-    height: 7vh;
+    height: 9vh;
 }
 
 
@@ -164,36 +170,21 @@ a>img {
         width: 40px;
         height: 40px;
     }
-    .nav-link{
-        color: aliceblue;
-    }
-    .collapse{
-        height: 20vh;
-    }
+
+
+    /* Footer  */
+
+    
     .bg-header, header{
         background-color: #003a7e;
         line-height: 2.95rem;
         height: 15vh;
     }
-    .bg-footer{
-        background-color: #003a7e;
-    }
-    .img{
-        height: 10rem;
-        width: 10rem;
-    }
-    .img-header{
-        height: 26vh;
-        width: 50vw;
-    }
-    .img-footer{
-        height: 7vh;
-        width: 10vw;
-    }
+
     footer{
-        width: 100vw;
         background-color: #003a7e;
     }
+
     footer a {
         font-size: large;
     }
